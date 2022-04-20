@@ -1,0 +1,374 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.icon {
+  display:inline-block;
+  font-size: 25px;
+  animation: float 3s ease-in-out infinite;
+}
+.icon-2 {
+  display:inline-block;
+  font-size: 10px;
+  animation: float 9s ease-in-out infinite;
+ 
+}
+.icon-3 {
+  display:grid;
+  font-size: 10px;
+  animation: float 10s ease-in-out infinite;
+ 
+}
+@keyframes float {
+  0%{
+    transform: translateY(0);
+    
+  }
+  50%{
+    transform: translateY(-15px);
+    
+  }
+  100%{
+    transform: translateY(0);
+  
+  }
+
+}
+/*circle update blue no usado */
+.loader-wrapper-blue {
+  width: 60px;
+  height:60px;
+}
+.loader-blue{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border:10px solid #4906bd;
+  border-top-color:#4906bd ;
+  border-bottom-color:#4906bd;
+  border-radius: 50%;
+  animation: rotate 15s linear infinite;
+
+}
+.loader-inner-blue{
+  border-top-color:#ed08b0;
+  border-bottom-color:rgb(47, 45, 45);
+  animation-duration:2.5s;
+}
+@keyframes rotate {
+  0%{
+    transform:scale(1) rotate(360deg);
+  }
+ 50%{
+    transform:scale(.8) rotate(-360deg);
+  }
+}
+/*circle delete red no usado*/
+.loader-wrapper-red {
+  width: 60px;
+  height:60px;
+}
+.loader-red{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border:10px solid #f10404;
+  border-top-color:#f10404 ;
+  border-bottom-color:#f10404;
+  border-radius: 50%;
+  animation: rotate 15s linear infinite;
+
+}
+.loader-inner-red{
+  border-top-color:#ed08b0;
+  border-bottom-color:rgb(47, 45, 45);
+  animation-duration:2.5s;
+}
+@keyframes rotate {
+  0%{
+    transform:scale(1) rotate(360deg);
+  }
+ 50%{
+    transform:scale(.8) rotate(-360deg);
+  }
+}
+
+/*spinner no usado*/
+.spinner{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.spinner::before,
+.spinner::after{
+  content: "";
+  position:absolute;
+  border-radius: inherit;
+}
+.spinner:before{
+  width: 20%;
+  height: 20%;
+  background-image: linear-gradient(0deg,#d80d0d 0%,#0d0df3 100%);
+  animation: spin 2s infinite linear;
+}
+.spinner:after{
+  content: "Uploading";
+  font-size: 20px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+@keyframes spin {
+  to{
+    transform: rotate(360deg);
+  }
+  
+}
+/*spinner title*/
+.spinner-goback {
+  
+  width: 80px;
+  height:80px;
+  background-image: url(../public/bitmon.jpg);
+  background-size:cover;
+  border: solid 6px #d0f903;
+
+ 
+  position: relative;
+
+  
+  border-radius:50%;
+  border-top-color:transparent;
+  border-bottom-color:transparent;
+  
+  
+  animation: spin 2s infinite;
+}
+ @keyframes spin {
+ 
+   0%{
+     transform: rotate(0deg);
+    }
+   50%{
+     box-shadow: 
+    0 0 25px #e3dddd,
+    0 0 50px #d6d1d1;
+     transform: rotate(180deg) scale(1.2);
+    }
+   100%{ transform: rotate(360deg);}
+ }
+
+
+
+/*cars*/
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+  minmax(200px,1fr));
+  gap:10px;
+}
+/*cards image*/
+.cards-home{
+  perspective: 500px; /*In simple terms, in a 3D space, the perspective property will determine how far away or close to you the item will appear to be. The smaller the number the closer, the larger the farthest. Play around with the values to see the results. This effect will apply to the children that are transformed, since we are applying it to the card, we have to add the perspective to the parent of the card, the cards section. */
+}
+
+.card-home{
+  background-size:cover; /*Setting the size of the background to cover will scale the image to fill the entire space of the container while preserving it's ratio.*/
+  border: 2px solid 
+  rgba(255, 255, 255, .25);
+  border-radius: 4px;
+  position:relative; /*Position of relative is set because of the title that we will have inside of here with position of absolute.*/
+  transform-style: preserve-3d; /*This will make the children of the card remain in a 3D space (the title). */
+  will-change: transform; /*Tells the user agent to expect a change on the transform property and prepares it for rendering. */
+  transition: transform .5s; /*Makes the animation smooth over .5 seconds. */
+}
+.card-home:hover{
+  transform: translateZ(10px)
+  rotateX(20deg) rotateY(30deg);
+  /*
+      The translateZ function repositions the element along the z-axis in 3D space, for example, closer to or farther away from the viewer.
+      The rotateX function will rotate the element in the X axis, rotateY on the Y axis.
+  */
+}
+/*postform*/
+.button-save{
+  display: inline-block;
+  background: #0d0df3;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: 3px solid 
+  #0d0df3;
+  border-radius:10px;
+}
+
+.button-save:hover{
+  animation: pulsate 1s 
+  ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+  /* 
+      Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+      The values are as follow: offset-x | offset-y | blur-radius | color
+  */
+  0%{
+      box-shadow: 
+      0 0 25px #fafcfc,
+      0 0 50px #f7f6f8;
+  }
+}
+/*button-go*/
+.button-go{
+  display: inline-block;
+  background: #0d0df3;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: 3px solid 
+  #0d0df3;
+  border-radius:10px;
+}
+
+.button-go:hover{
+  animation: pulsate 1s 
+  ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+  /* 
+      Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+      The values are as follow: offset-x | offset-y | blur-radius | color
+  */
+  0%{
+      box-shadow: 
+      0 0 25px #fafcfc,
+      0 0 50px #f7f6f8;
+  }
+}
+
+/*homepage update*/
+.button-up{
+  display: inline-block;
+  background:#0d0df3;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 3px solid 
+  #3c67e3;
+  border-radius: 10px;
+}
+
+.button-up:hover{
+  animation: pulsate 1s 
+  ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+  /* 
+      Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+      The values are as follow: offset-x | offset-y | blur-radius | color
+  */
+  0%{
+      box-shadow: 
+      0 0 25px #5ddcff,
+      0 0 50px #4e00c2;
+  }
+}
+/*homepage delete*/
+
+.button-delete{
+  display: inline-block;
+  background:#d80d0d;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 3px solid 
+  #fa0303;
+  border-radius: 10px;
+}
+
+.button-delete:hover{
+  animation: pulsate 1s 
+  ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+  /* 
+      Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+      The values are as follow: offset-x | offset-y | blur-radius | color
+  */
+  0%{
+      box-shadow: 
+      0 0 25px #e61313,
+      0 0 50px #ec0808;
+  }
+}
+
+.button-cancel{
+  display: inline-block;
+  background:#252525;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 3px solid 
+  #252525;
+  border-radius: 10px;
+}
+
+.button-cancel:hover{
+  animation: pulsate 1s 
+  ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+  /* 
+      Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+      The values are as follow: offset-x | offset-y | blur-radius | color
+  */
+  0%{
+      box-shadow: 
+      0 0 25px #5ddcff,
+      0 0 50px #4e00c2;
+  }
+}
+
+/*homepage create*/
+.button-create{
+  display: inline-block;
+  background:#232222;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 3px solid 
+  #201f1f;
+  border-radius: 10px;
+}
+
+.button-create:hover{
+  animation: pulsate 1s 
+  ease-in-out; /*The pulsate animation is added on hover. You could also add this on .button:focus and it will add it when clicking the button as well.*/
+}
+
+@keyframes pulsate {
+  /* 
+      Here we have two shadows. You can add as many as you want by using different offset values as long as you separate it with a comma.
+      The values are as follow: offset-x | offset-y | blur-radius | color
+  */
+  0%{
+      box-shadow: 
+      0 0 25px #e3dddd,
+      0 0 50px #d6d1d1;
+  }
+}
+
+
+
