@@ -18,29 +18,34 @@ function HomePage() {
                                <h1 className='text-white text-4xl'>There are no posts </h1>
                          </div>
                           )
-                    return <div className='cards '>
-                          {posts.map(post => (
+                    return <div className='cards'>
+                    
+                              {posts.map(post => (
                               <PostCard post={post} key={post._id}
                                />
-                               ))}
-                            
+                               ))}        
                           </div>
 
                }
            return ( 
         // recorremos el array posts,que llenamos con la funcion getPosts por cada propiedad
-           <div className='text-white '>
-         <header className='flex justify-between py-4 font-bold'>
-         <h1 className='text-2xl text-gray-300'>Posts ({posts.length})</h1>
-             <Link to='/new' className='button-create'>
-             Create New Post
-             </Link>
-         </header>
+      
+               <div >
+                    <div >
+                    <header className='flex justify-between py-4 font-bold '>
+         
+                    <h1 className='text-2xl text-gray-300'>Posts ({posts.length})</h1>
+                     <Link to='/new' className='button-create'>
+                     Create New Post
+                     </Link>
+                    </header>
             
-            {renderMain()}
-             
+                     {renderMain()}
+                     </div>
+         
+              </div>
+
           
-           </div>
            
          )
           

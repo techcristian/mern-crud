@@ -34,13 +34,17 @@ function PostForm() {
 
   
     return(
+      <div className='cards'>
+
       
-   <div className='flex items-center justify-center '>
+   <div className='flex items-center justify-content-space-evenly box'>
       
 
-      <div className='bg-zinc-800 p-10 shadow-md shadow-black cards '>
-      <div className='spinner-goback'></div>
+      <div className=' cards text-context '>
+
+      
         <header className='flex justify-between items-center py-4'>
+        <div></div>
         <div className='text-white text-2xl'>Upload-Image </div>
         
         <Link to='/' className='button-go '>go back</Link>
@@ -107,7 +111,7 @@ function PostForm() {
         
 
         </div>
-        
+        </div>
         )
     
 }
