@@ -127,13 +127,14 @@
   
 }
 /*spinner title*/
+/*border: solid 6px #d0f903;*/
 .spinner-goback {
   
   width: 80px;
   height:80px;
-  background-image: url(../public/bitmon.jpg);
+  background-image: url(../public/electrico1.webp);
   background-size:cover;
-  border: solid 6px #d0f903;
+  
 
  
   position: relative;
